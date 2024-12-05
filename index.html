@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced E-Portfolio.3</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/03673f4e3f.js" crossorigin="anonymous"></script>
+  <script src="index.js" defer></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "5nfcYx16VEeAWrbBH",
+      });
+   })();
+</script>
+</head>
+<body>
+  <section id="landing-page" onmousemove="moveBackground(event)">
+    <nav>
+      <figure>
+        <img id="personal-logo" src="/assets/JR logo.png" alt="">
+      </figure>
+      <ul class="nav__links">
+        <li class="nav__list" onclick="toggleModal()">
+          <a href="#" class="
+          nav__link
+          link__hover-effect
+          link__hover-effect--black
+          ">About</a>
+        </li>
+        <li class="nav__list">
+          <a href="#projects" class="
+          nav__link
+          link__hover-effect
+          link__hover-effect--black
+          ">Projects</a>
+        </li>
+        <li class="nav__list" onclick="toggleModal()">
+          <a href="#" class="
+          nav__link
+          link__hover-effect
+          link__hover-effect--black
+          ">Contact</a>
+        </li>
+        <li class="nav__list click" onclick="toggleContrast()">
+          <a href="#" class="
+          nav__link
+          ">
+          <i class="fa-solid fa-adjust"></i>
+        </a>
+        </li>
+      </ul>
+    </nav>
+    <header class="header">
+      <div class="header__content">
+        <h1 class="title">
+          Hey <br>
+          <b class="teal">I'm Jennifer.</b>
+        </h1>
+        <p class="header__para">
+          I'm a <span class="FSE teal">Frontend Software Engineer</span> with a strong passion for building web applications with great user experiences. <br>
+          Here's a bit more <span class="about-me teal link__hover-effect link__hover-effect--teal click" onclick="toggleModal()">about me.</span>
+        </p>
+        <div class="social__list">
+          <a href="" class="social__link click">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="" class="social__link click">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="" class="social__link click">
+            <i class="fa-regular fa-file"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <a href="#">
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+    </a>
+    <a href="#projects" class="scroll">
+      <div class="scroll__icon click"></div>
+    </a>
+    <div class="modal">
+      <div class="modal__half modal__about">
+        <h3 class="modal__title">Here's a bit about me.</h3>
+        <h4 class="modal__sub-title">Frontend Software Engineer.</h4>
+        <div class="modal__para">
+          I'm a <span class="teal">frontend web developer</span> with a strong command of <b>Html, CSS, and JavaScript,</b> dedicated to building <span class="teal">responsive</span> and <span class="teal">intuitive web applications.</span>
+          <br>
+          My enthusiasm for learning and innovation fuels my drive to create <span class="teal">exceptional user experiences</span> and contribute effectively to <span class="teal">dynamic</span> teams.
+        </div>
+        <div class="modal__languages">
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+            <div class="language__name">HTML</div>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+            <div class="language__name">CSS</div>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+            <div class="language__name">JAVASCRIPT</div>
+          </figure>
+        </div>
+      </div>
+      <div class="modal__half modal__contact">
+        <h3 class="modal__title">Let's have a chat!</h3>
+        <h4 class="modal__sub-title">I'm currently open to new opportunities.</h4>
+        <form id="contact__form" onsubmit="contact(event)">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" required></input>
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">E-mail</label>
+            <input class="input" name="user_email" type="email" required></input>
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Message</label>
+            <textarea class="input" name="message" type="text" required></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">Send it my way</button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fa-solid fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking to you soon.
+        </div>
+        <i class="fa-solid fa-x modal__exit click" onclick="toggleModal()"></i>
+      </div>
+    </div>
+    <img src="/assets/semi circle.svg" class="shape shape--0">
+    <img src="/assets/circle.svg" class="shape shape--1">
+    <img src="/assets/squiggly.svg" class="shape shape--2">
+    <img src="/assets/circle.svg" class="shape shape--3">
+    <img src="/assets/triangle.svg" class="shape shape--4">
+    <img src="/assets/circle.svg" class="shape shape--5">
+    <img src="/assets/squiggly.svg" class="shape shape--6">
+    <img src="/assets/circle.svg" class="shape shape--7">
+    <img src="/assets/semi circle.svg" class="shape shape--8">
+  </section>
+  <section id="projects">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          Here are some of my <span class="teal">projects</span>
+        </h1>
+        <ul class="project__list">
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="/assets/blinker mockup.png" class="project__img" alt="">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title">
+                  Car Sales Projects
+                </h3>
+                <h4 class="project__description--sub-title">
+                  Html, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro odit amet, ipsa expedita quo perspiciatis fugiat vel sint molestiae ab voluptas, veritatis unde nostrum dolorum nemo? Repellendus, voluptates. Odit, at.
+                </p>
+                <div class="project__description--links">
+                  <a href="" class="project__description--link">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="" class="project__description--link">
+                    <i class="fa-solid fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="/assets/blinker mockup.png" class="project__img" alt="">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title">
+                  Car Sales Projects
+                </h3>
+                <h4 class="project__description--sub-title">
+                  Html, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro odit amet, ipsa expedita quo perspiciatis fugiat vel sint molestiae ab voluptas, veritatis unde nostrum dolorum nemo? Repellendus, voluptates. Odit, at.
+                </p>
+                <div class="project__description--links">
+                  <a href="" class="project__description--link">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="" class="project__description--link">
+                    <i class="fa-solid fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="/assets/blinker mockup.png" class="project__img" alt="">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title">
+                  Car Sales Projects
+                </h3>
+                <h4 class="project__description--sub-title">
+                  Html, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro odit amet, ipsa expedita quo perspiciatis fugiat vel sint molestiae ab voluptas, veritatis unde nostrum dolorum nemo? Repellendus, voluptates. Odit, at.
+                </p>
+                <div class="project__description--links">
+                  <a href="" class="project__description--link">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="" class="project__description--link">
+                    <i class="fa-solid fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row footer__row">
+        <figure>
+          <img class="footer__logo--img" src="/assets/JR logo.png" alt="">
+        </figure>
+        <div class="footer__social--list">
+          <a href="#" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+          ">
+          GitHub
+          </a>
+          <a href="#" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+          ">
+          Linkedin
+          </a>
+          <a href="#" onclick="toggleModal()" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+          ">
+          Contact
+          </a>
+          <a href="/assets/David Bragg Resume.pdf" target="_blank" class="
+          footer__social--link
+          link__hover-effect 
+          link__hover-effect--white
+          ">
+          Resume
+          </a>
+        </div>
+        <div class="footer__copyright">Copyright &copy; 2024 Jennifer Reece</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
